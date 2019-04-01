@@ -81,7 +81,19 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// The event director wants to send out e-mails to encourage everyone to come back the following year with a "personal" message. Return an array with each runner's e-mail and the message "[First Name], thanks for coming and hope to see you again next year!"
+let personalMessage = [];
+personalMessage = runners.map(runners => [runners["email"], `${runners["first_name"]}, thanks for coming and hope to see you again next year!`]);
+console.log(personalMessage);
 
 // Problem 2
+// The event director wants to know the first names of everyone who donated above 150 to personally thank later on. Return an array with each individual's names and their contribution if they contributed over 150.
+let highRollers = [];
+highRollers = runners.filter(runners => runners["donation"] > 150).map(runners => [runners["first_name"], runners["donation"]]);
+console.log(highRollers);
 
 // Problem 3
+// The runners' bibs will have a new format this year with their last name followed by their id number. Return an array of all the labels for the bibs. Example: 'Baine50' for id: 50
+let newBibs = [];
+newBibs = runners.map(runners => runners["last_name"] + runners["id"]);
+console.log(newBibs);
